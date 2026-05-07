@@ -1,0 +1,170 @@
+python3 -m http.server 8000
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>25 da Moana 🎉</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#ffb6c1,#ffc0cb,#ffe4ec);
+    overflow-y:auto;
+    padding:20px;
+}
+
+.card{
+    width:100%;
+    max-width:360px;
+    background:white;
+    padding:35px;
+    border-radius:28px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,0.18);
+    animation:fade 1s ease;
+}
+
+h1{
+    color:#ff4f81;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#666;
+    line-height:1.6;
+    margin-bottom:20px;
+    font-size:15px;
+}
+
+.info{
+    background:#fff0f5;
+    padding:15px;
+    border-radius:18px;
+    margin-bottom:25px;
+    color:#444;
+    line-height:1.8;
+    font-size:15px;
+}
+
+.question{
+    color:#333;
+    font-size:18px;
+    margin-bottom:20px;
+    line-height:1.5;
+}
+
+button{
+    border:none;
+    border-radius:30px;
+    padding:14px 22px;
+    margin:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.btn{
+    background:#ff4f81;
+    color:white;
+}
+
+.message{
+    margin-top:25px;
+    color:#444;
+    line-height:1.7;
+    font-size:16px;
+    animation:fade 0.5s ease;
+}
+
+.confirm{
+    display:none;
+    margin-top:25px;
+    background:#25D366;
+    color:white;
+    width:100%;
+    font-weight:bold;
+}
+
+.footer{
+    margin-top:20px;
+    font-size:13px;
+    color:#999;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>🎉 25 da Moana 🎉</h1>
+
+    <p class="subtitle">
+        Mais um ciclo, mais histórias e mais momentos pra viver com quem eu amo 💖✨
+    </p>
+
+    <div class="info">
+        📍 Alo Grau <br>
+        ⏰ A partir de meio-dia 🥂
+    </div>
+
+    <div class="question">
+        👀 Antes de confirmar…<br>
+        vamos ver se você realmente me conhece:
+        <br><br>
+
+        🥃 Qual minha bebida preferida?
+    </div>
+
+    <button class="btn" onclick="respostaCerta()">
+        🥃 Whisky
+    </button>
+
+    <button class="btn" onclick="respostaErrada()">
+        🍹 Drink
+    </button>
+
+    <div class="message" id="mensagem"></div>
+
+    <a
+      href="https://wa.me/5561983740385?text=Oiii,%20confirmo%20presença%20no%20seu%20aniversário."
+      target="_blank"
+    >
+        <button class="confirm" id="confirmar">
+            💕 Confirmar presença
+        </button>
+    </a>
+
+    <div class="footer">
+        sem você não tem
